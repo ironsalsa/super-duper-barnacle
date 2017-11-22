@@ -18,17 +18,8 @@ VOLUME [ "/mnt/createdpackages" ]
 RUN curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum install -y nodejs-6.9.1
 
-#Install PM2 and NPM Bundle
-RUN npm install pm2
-RUN npm install npm-bundle -g
-
-#Create Volume to put the packages after creation
-WORKDIR /mnt/createdpackages
-VOLUME [ "/mnt/createdpackages" ]
-
-COPY ./scripts/bundleup.sh /src/
-RUN mv /src/bundleup.sh /tmp && chmod +x /tmp/bundleup.sh
+COPY ./createdpackages/pm2-2.7.2.tgz /tmp/
 
 ENTRYPOINT ["/bin/bash"]
 
-CMD ["/usr/bin/npm-bundle", "pm2"]
+CMD ["/bin/hostname"]
