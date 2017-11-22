@@ -21,5 +21,3 @@ RUN yum install -y nodejs-6.9.1
 COPY ./pm2-2.7.2.tgz /tmp/
 
 ENTRYPOINT ["/bin/bash"]
-
-CMD ["/bin/hostname"]
