@@ -7,13 +7,6 @@ MAINTAINER marcy@realeyes.com
 RUN rpm -Uvh http://mirrors.kernel.org/fedora-epel/6/i386/epel-release-6-8.noarch.rpm
 RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
 
-#Create Volume to put the packages after creation
-RUN mkdir -p /mnt/createdpackages
-VOLUME [ "/mnt/createdpackages" ]
-
-#Installing prerequisites
-#RUN yum install -y git
-
 #Node Setup
 RUN curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum install -y nodejs-6.9.1
