@@ -18,7 +18,7 @@ VOLUME [ "/mnt/createdpackages" ]
 RUN curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum install -y nodejs-6.9.1
 
-COPY ./createdpackages/pm2-2.7.2.tgz /tmp/
+COPY ./pm2-2.7.2.tgz /tmp/
 
 ENTRYPOINT ["/bin/bash"]
 
